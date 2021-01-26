@@ -1,8 +1,10 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   module: {
-    rules: [      
-      {//For js files
+    rules: [
+      {
+        //For js files
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "babel-loader",
@@ -46,4 +48,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "public/index.html",
+      title: "Name from webpack plugin",
+      buildTime: new Date().toISOString(),
+    }),
+  ],
 };
