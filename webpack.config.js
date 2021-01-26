@@ -1,44 +1,22 @@
 module.exports = {
   mode: "development",
   module: {
-    rules: [
-      //For js files
-      {
+    rules: [      
+      {//For js files
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: "babel-loader",
-          },
-        ],
+        loader: "babel-loader",
       },
       //For css files
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: "style-loader",
-          },
-          {
-            loader: "css-loader",
-          },
-        ],
+        use: ["style-loader", "css-loader"],
       },
       //For SCSS and SASS
       {
         // Регулярное выражение которое позволяет выбрать как .scss, так и .sass
         test: /\.s[ca]ss$/,
-        use: [
-          {
-            loader: "style-loader",
-          },
-          {
-            loader: "css-loader",
-          },
-          {
-            loader: "sass-loader",
-          },
-        ],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       //For images
       {
