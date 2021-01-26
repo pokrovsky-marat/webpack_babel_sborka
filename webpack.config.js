@@ -12,6 +12,34 @@ module.exports = {
           },
         ],
       },
+      //For css files
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+          },
+        ],
+      },
+      //For SCSS and SASS
+      {
+        // Регулярное выражение которое позволяет выбрать как .scss, так и .sass
+        test: /\.s[ca]ss$/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+          },
+          {
+            loader: "sass-loader",
+          },
+        ],
+      },
       //For images
       {
         test: /\.(png|gif|jpg|jpeg|ico)$/,
