@@ -1,4 +1,10 @@
 $color: olive;
+$spanColor: pink;
 body {
   background-color: $color;
+}
+h1 {
+  span {
+    color: $spanColor;
+  }
 }
